@@ -11,7 +11,7 @@ export interface Course {
     categoryId: number
 }
 
-// Interface para os atributos não obrigatórios de Course
+// Interface atributos necessários para criação, Atributos Opcionais, 'id', 'thumbnailUrl, 'featured'
 export interface CourseCreationAttributes extends Optional<Course, 'id' | 'thumbnailUrl' | 'featured'> {}
 
 // Interface para Instância do Model Course

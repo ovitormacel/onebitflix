@@ -6,6 +6,7 @@ import { router } from "./routes";
 const app = express();
 
 app.use(express.static("public"));
+app.use(express.json());
 
 //Utiliza as rotas do AdminJs. /admin
 app.use(adminJs.options.rootPath, adminJsRouter);

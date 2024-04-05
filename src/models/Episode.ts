@@ -12,7 +12,7 @@ export interface Episode {
   courseId: number
 }
 
-// Interface Atributos Opcionais
+// Interface atributos necessários para criação, Atributos Opcionais, 'id', 'videoUrl, 'secondsLong'
 export interface EpisodeCreationAttributes extends Optional<Episode, 'id' | 'videoUrl' | 'secondsLong' > {}
 
 //Interface Instância Episode
