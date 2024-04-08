@@ -42,6 +42,7 @@ export const authController = {
 
             if(!user) return res.status(404).json({message: 'E-mail não registrado.'});
 
+            // Utiliza o método "checkPassword" da INSTÂNCIA de User.
             user.checkPassword(password, (error, isSame) => {
                 if(error) return res.status(400).json({message: error.message});
                 if(!isSame) return res.status(401).json({message: 'Senha Incorreta'});
