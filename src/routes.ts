@@ -5,6 +5,7 @@ import { episodesController } from "./controllers/episodesController";
 import { authController } from "./controllers/authController";
 import { ensureAuth, ensureAuthInQuery } from "./middlewares/auth";
 import { favoriteController } from "./controllers/favoriteController";
+import { likeController } from "./controllers/likeController";
 
 const router = express.Router();
 
@@ -30,5 +31,9 @@ router.get("/episodes/stream", ensureAuthInQuery, episodesController.stream);
 router.post("/favorites", ensureAuth, favoriteController.save);
 router.get("/favorites", ensureAuth, favoriteController.index);
 router.delete("/favorites/:id", ensureAuth, favoriteController.delete);
+
+//Likes
+router.post("/likes", ensureAuth, likeController.save);
+router.delete("/likes/:id", ensureAuth, likeController.remove);
 
 export {router};
