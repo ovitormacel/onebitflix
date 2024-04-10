@@ -8,7 +8,10 @@ export interface Like {
     courseId: number
 }
 
-export interface LikeInstance extends Model<Like>, Like { }
+export interface LikeInstance extends Model<Like>, Like { 
+    userId: number
+    CourseId: number
+}
 
 export const Like = sequelize.define<LikeInstance, Like>('Like', {
     userId: {
