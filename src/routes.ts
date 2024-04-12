@@ -37,10 +37,12 @@ router.post("/favorites", ensureAuth, favoriteController.save);
 router.get("/favorites", ensureAuth, favoriteController.index);
 router.delete("/favorites/:id", ensureAuth, favoriteController.delete);
 
-//Likes
+// Likes
 router.post("/likes", ensureAuth, likeController.save);
 router.delete("/likes/:id", ensureAuth, likeController.remove);
 
+// Users
+router.get("/users/current", ensureAuth, usersController.show);
 router.get("/users/current/watching", ensureAuth, usersController.watching);
 
 export {router};
